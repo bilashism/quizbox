@@ -1,3 +1,4 @@
-# Setting Up Dev Environment with React, Vite, Tailwind 
+# QuizBox  
 
-## A quick starter template 
+- Github repository link: 
+- Live link: 
