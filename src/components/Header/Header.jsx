@@ -1,5 +1,4 @@
 import React from "react";
-import Topics from "../Topics/Topics";
 
 const Header = () => {
   return (
@@ -42,8 +41,6 @@ const Header = () => {
           </figure>
         </div>
       </header>
-
-      <Topics></Topics>
     </>
   );
 };

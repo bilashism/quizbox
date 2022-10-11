@@ -11,10 +11,27 @@ export const router = createBrowserRouter([
     element: <Main />,
     loader: () => fetch(`https://openapi.programming-hero.com/api/quiz`),
     children: [
-      { path: "/", element: <Header /> },
-      { path: "/home", element: <Header /> },
-      { path: "/blog", element: <Blog /> },
-      { path: "/statistics", element: <Statistics /> }
+      {
+        path: "/",
+        element: (
+          <>
+            <Header />
+            <Topics />
+          </>
+        )
+      },
+      {
+        path: "home",
+        element: (
+          <>
+            <Header />
+            <Topics />
+          </>
+        )
+      },
+      { path: "blog", element: <Blog /> },
+      { path: "statistics", element: <Statistics /> },
+      { path: "topics", element: <Topics /> }
     ],
     errorElement: <ErrorPage />
   }

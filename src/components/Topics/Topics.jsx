@@ -4,9 +4,8 @@ import Topic from "./Topic/Topic";
 
 const Topics = () => {
   const topics = useContext(TopicsContext);
-  console.log(topics);
   return (
-    <section className="px-4">
+    <section className="px-4 pt-8 lg:pt-20 min-h-screen flex flex-col justify-center">
       <div className="container mx-auto py-24">
         <h2 className="text-6xl text-center pb-10 lg:pb-20">
           Take any quiz you want
