@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   return (
@@ -15,11 +17,15 @@ const Header = () => {
             Learn with QuizBox. Practice your favorite topics. Ace all of the
             questions and achieve your goal. <br /> Let's get you started!!
           </p>
-          <div className="flex justify-center">
+          <div className="flex justify-center items-center">
             <Link
               to="../topics"
-              className="inline-flex text-white bg-blue-500 border-0 font-bold py-4 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg transition">
-              Browse topics
+              className="inline-flex justify-center items-center gap-3 text-white bg-blue-500 border-0 font-bold py-4 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg transition">
+              Browse topics{" "}
+              <FontAwesomeIcon
+                icon={faArrowAltCircleRight}
+                className="w-8 h-8"
+              />
             </Link>
           </div>
         </div>
