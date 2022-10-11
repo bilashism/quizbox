@@ -12,7 +12,7 @@ const Quiz = () => {
           <h2 className="text-4xl lg:text-6xl text-center pb-10  ">
             Answer <span className="text-blue-600">{name}</span> quizzes
           </h2>
-          <p className="text-center pb-8">
+          <p className="text-center pb-8 text-lg">
             Total number of questions: <b className="text-blue-600">{total}</b>
           </p>
           <Questions></Questions>
