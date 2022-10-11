@@ -1,25 +1,27 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { QuestionContext } from "../Questions";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Question = () => {
   const questionData = useContext(QuestionContext);
   const { question, correctAnswer, options } = questionData;
-  const [revealAnswer, setRevealAnswer] = useState(false);
+  const showAnswer = () =>
+    toast.info(`Correct answer is: ${correctAnswer}`, {
+      icon: "✅"
+    });
   console.log(questionData);
   return (
     <article className="flex flex-col gap-6">
-      <div className="flex flex-wrap">
-        <h3 className="text-2xl">{question.replace(/<[^>]*>/gi, "")}</h3>
-        <div className="">
-          <button type="button" onClick={() => setRevealAnswer(!revealAnswer)}>
-            👁‍🗨
-          </button>
-          {revealAnswer && <p>{correctAnswer}</p>}
-        </div>
+      <h3 className="text-2xl">{question.replace(/<[^>]*>/gi, "")}</h3>
+      <div className="flex flex-wrap gap-8">
+        <button type="button" onClick={showAnswer}>
+          👁‍🗨
+        </button>
+        <ToastContainer role="alert" />
       </div>
       <div className="">
-        {options.map(option => (
-          <div>{option}</div>
+        {options.map((option, i) => (
+          <div key={i + Math.random()}>{option}</div>
         ))}
       </div>
     </article>
