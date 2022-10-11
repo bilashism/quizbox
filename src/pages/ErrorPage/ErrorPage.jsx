@@ -9,7 +9,7 @@ const ErrorPage = () => {
       <h2>ErrorPage</h2>
       {error.status || error.statusText}
       <div className="">
-        <Link to="/" className="hover:underline text-blue-600">
+        <Link to="/home" className="hover:underline text-blue-600">
           Back to home
         </Link>
       </div>
