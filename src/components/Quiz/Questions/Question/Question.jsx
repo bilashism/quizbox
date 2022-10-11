@@ -19,7 +19,12 @@ const Question = () => {
           {question.replace(/<[^>]*>/gi, "").replace(/\&nbsp;/gi, " ")}
         </h3>
         <div className="">
-          <button type="button" onClick={() => showAnswer()}>
+          <button
+            type="button"
+            onClick={() => showAnswer()}
+            aria-label="Reveal answer"
+            title="Reveal answer">
+            <span className="sr-only">Reveal answer</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
