@@ -8,9 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Questions = () => {
   const quizQuestions = useContext(QuizQuestionsContext);
-  console.log(quizQuestions);
   return (
-    <div className="questions-container">
+    <div className="questions-container grid grid-cols-1 gap-6 py-6">
       {quizQuestions.map(question => (
         <QuestionContext.Provider value={question} key={question.id}>
           <Question></Question>

@@ -13,10 +13,10 @@ const Question = () => {
     });
 
   return (
-    <article className="flex flex-col gap-6 count-[section]">
+    <article className="flex flex-col gap-6 bg-slate-200 px-4 py-6">
       <div className="flex gap-8 justify-between">
         <h3 className="text-2xl question-heading">
-          {question.replace(/<[^>]*>/gi, "")}
+          {question.replace(/<[^>]*>/gi, "").replace(/\&nbsp;/gi, " ")}
         </h3>
         <div className="">
           <button type="button" onClick={() => showAnswer()}>
