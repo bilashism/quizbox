@@ -1,0 +1,8 @@
+.questions-container {
+  counter-reset: questionHeading 0;
+}
+
+.questions-container .question-heading:before {
+  counter-increment: questionHeading;
+  content: counter(questionHeading) ". ";
+}

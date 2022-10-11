@@ -13,9 +13,11 @@ const Question = () => {
     });
 
   return (
-    <article className="flex flex-col gap-6">
+    <article className="flex flex-col gap-6 count-[section]">
       <div className="flex gap-8 justify-between">
-        <h3 className="text-2xl">{question.replace(/<[^>]*>/gi, "")}</h3>
+        <h3 className="text-2xl question-heading">
+          {question.replace(/<[^>]*>/gi, "")}
+        </h3>
         <div className="">
           <button type="button" onClick={() => showAnswer()}>
             <svg
