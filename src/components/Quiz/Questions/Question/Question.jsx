@@ -1,7 +1,9 @@
-import React, { useContext } from "react";
+import React, { createContext, useContext } from "react";
 import { QuestionContext } from "../Questions";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import Options from "./Options/Options";
+export const QuestionOptionsContext = createContext([]);
+
 const Question = () => {
   const questionData = useContext(QuestionContext);
   const { question, correctAnswer, options } = questionData;
@@ -9,21 +11,27 @@ const Question = () => {
     toast.info(`Correct answer is: ${correctAnswer}`, {
       icon: "✅"
     });
-  console.log(questionData);
+
   return (
     <article className="flex flex-col gap-6">
-      <h3 className="text-2xl">{question.replace(/<[^>]*>/gi, "")}</h3>
-      <div className="flex flex-wrap gap-8">
-        <button type="button" onClick={showAnswer}>
-          👁‍🗨
-        </button>
-        <ToastContainer role="alert" />
+      <div className="flex gap-8 justify-between">
+        <h3 className="text-2xl">{question.replace(/<[^>]*>/gi, "")}</h3>
+        <div className="">
+          <button type="button" onClick={() => showAnswer()}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              className="w-8 h-8 fill-blue-600"
+              viewBox="0 0 16 16">
+              <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+              <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+            </svg>
+          </button>
+        </div>
       </div>
-      <div className="">
-        {options.map((option, i) => (
-          <div key={i + Math.random()}>{option}</div>
-        ))}
-      </div>
+      <QuestionOptionsContext.Provider value={options}>
+        <Options></Options>
+      </QuestionOptionsContext.Provider>
     </article>
   );
 };
