@@ -27,5 +27,17 @@
     "tailwindcss": "^3.1.8",
     "vite": "^3.1.0",
     "vite-plugin-mkcert": "^1.10.1"
-  }
+  },
+  "description": "Live link: https://quizbox-7a6244.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bilashism/quizbox.git"
+  },
+  "keywords": [],
+  "author": "Md. Taifuzzaman Bilash <bilashism@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bilashism/quizbox/issues"
+  },
+  "homepage": "https://github.com/bilashism/quizbox#readme"
 }
